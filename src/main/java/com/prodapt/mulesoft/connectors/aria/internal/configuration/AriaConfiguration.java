@@ -8,6 +8,6 @@ import com.prodapt.mulesoft.connectors.aria.internal.operations.BillingAccountRe
 
 @ConnectionProviders(AriaConnectionProvider.class)
 @Operations(BillingAccountRegistration.class)
-public class AriaConfiguration {
+public class AriaConfiguration extends RestConfiguration {
 
 }

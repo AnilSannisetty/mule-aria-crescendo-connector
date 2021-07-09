@@ -1,10 +1,23 @@
 package com.prodapt.mulesoft.connectors.aria.internal.connection;
 
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeoutException;
+import java.util.function.BiConsumer;
+import java.util.function.Predicate;
 
+import org.mule.runtime.api.metadata.DataType;
+import org.mule.runtime.api.metadata.MediaType;
+import org.mule.runtime.api.metadata.TypedValue;
+import org.mule.runtime.api.util.MultiMap;
+import org.mule.runtime.extension.api.error.ErrorTypeDefinition;
+import org.mule.runtime.extension.api.exception.ModuleException;
+import org.mule.runtime.extension.api.runtime.operation.Result;
+import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
 import org.mule.runtime.http.api.HttpConstants;
 import org.mule.runtime.http.api.HttpService;
 import org.mule.runtime.http.api.client.HttpClient;
@@ -18,6 +31,12 @@ import org.mule.runtime.http.api.domain.message.response.HttpResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.internal.error.AriaErrorTypes;
+import com.prodapt.mulesoft.connectors.aria.internal.error.exception.AriaException;
+import com.prodapt.mulesoft.connectors.aria.internal.utility.AriaUtility;
+import com.prodapt.mulesoft.connectors.aria.internal.utility.RestRequestBuilder;
+
 public class AriaConnection {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AriaConnection.class);
@@ -26,10 +45,13 @@ public class AriaConnection {
 	private final String auth_key;
 	private final HttpClient httpClient;
 	private final String baseURL;
+	private static final String REMOTELY_CLOSED = "Remotely closed";
+	private final MultiMap<String, String> defaultQueryParams;
 	
+	private final MultiMap<String, String> defaultHeaders;
 	
 
-	public AriaConnection(String baseURL, long client_no, String auth_key, HttpService httpService) {
+	public AriaConnection(String baseURL, long client_no, String auth_key, HttpService httpService, MultiMap<String, String> defaultQueryParams, MultiMap<String, String> defaultHeaders) {
 		logger.info("Start of Aria connection constructor");
 		this.baseURL = baseURL;
 		this.client_no = client_no;
@@ -37,6 +59,12 @@ public class AriaConnection {
 		logger.info("Before httpClient Initialization");
 		this.httpClient = createClient(httpService);
 		logger.info("After httpClient Initialization");
+	    this.defaultQueryParams = nullSafe(defaultQueryParams);
+	    this.defaultHeaders = nullSafe(defaultHeaders);
+	}
+
+	public HttpClient getHttpClient() {
+		return httpClient;
 	}
 
 	private HttpClient createClient(HttpService httpService)
@@ -62,6 +90,14 @@ public class AriaConnection {
 		 return this.httpClient.sendAsync(builder.build(),responseTimeout,false,null);
 	}
 	
+	public long getClient_no() {
+		return client_no;
+	}
+
+	public String getAuth_key() {
+		return auth_key;
+	}
+
 	public void invalidate()
 	{
 		try {
@@ -78,6 +114,109 @@ public class AriaConnection {
 	public CompletableFuture<HttpResponse> getHttpResponse(String baseURL, long client_no, String auth_key, int responseTimeout) {
 		return this.sendRequest(baseURL, client_no, auth_key, 30000);
 	}
+	
+	public CompletableFuture<Result<InputStream, HttpResponseAttributes>> request(RestRequestBuilder requestBuilder, int responseTimeoutMillis, MediaType defaultResponseMediaType, StreamingHelper streamingHelper) {
+		logger.info("Start of request method");
+		CompletableFuture<Result<InputStream, HttpResponseAttributes>> future = new CompletableFuture<>();
+	    HttpRequest request = getHttpRequest(requestBuilder);
+	    logger.info(request.getEntity().getContent().toString());
+	    try {
+	    	logger.info("Before sending the request");
+	      this.httpClient.sendAsync(request, responseTimeoutMillis, true, null).whenComplete((response, t) -> {
+	            if (t != null) {
+	            	logger.info("Before handleRequest exception - 1");
+	              handleRequestException(t, request, future);
+	            } else {
+	            	logger.info("Before handleResponse exception");
+	              handleResponse(response, defaultResponseMediaType, future, streamingHelper);
+	            } 
+	          });
+	    } catch (Throwable t) {
+	    	logger.info("Before handleRequest exception - 2");
+	      handleRequestException(t, request, future);
+	    } 
+	    return future;
+	}
+	
+	 private void handleResponse(HttpResponse response, MediaType defaultResponseMediaType, CompletableFuture<Result<InputStream, HttpResponseAttributes>> future, StreamingHelper streamingHelper) {
+		 logger.info("Start of HandleResponse" + response.getStatusCode());
+		 logger.info("Response: " + RestRequestBuilder.returnBodyString(new TypedValue<InputStream>(response.getEntity().getContent(),DataType.INPUT_STREAM)));
+		 AriaErrorTypes error = AriaErrorTypes.getErrorByCode(response.getStatusCode()).orElse(null);
+		    if (error != null) {
+		    	logger.info("Before calling HandleResponse Error"); 
+		      handleResponseError(response, defaultResponseMediaType, future, streamingHelper, error);
+		    } else {
+		    	logger.info("before calling future complete ");
+		      future.complete(toResult(response, false, defaultResponseMediaType, streamingHelper));
+		    } 
+		  }
+	 
+	 protected void handleResponseError(HttpResponse response, MediaType defaultResponseMediaType, CompletableFuture<Result<InputStream, HttpResponseAttributes>> future, StreamingHelper streamingHelper, AriaErrorTypes error) {
+		 logger.info("Start of handleResponseError");   
+		 future.completeExceptionally((Throwable) new AriaException(error, toResult(response, true, defaultResponseMediaType, streamingHelper)));
+		  }
+		  
+		  private void handleRequestException(Throwable t, HttpRequest request, CompletableFuture<Result<InputStream, HttpResponseAttributes>> future) {
+			  logger.info("Start of HandleRequest Exception");
+		    checkIfRemotelyClosed(t, request);
+		    AriaErrorTypes error = (t instanceof TimeoutException) ? AriaErrorTypes.TIMEOUT : AriaErrorTypes.CONNECTIVITY;
+		    future.completeExceptionally((Throwable)new ModuleException(t.getMessage(), (ErrorTypeDefinition)error, t));
+		  }
+		  private <T> Result<T, HttpResponseAttributes> toResult(HttpResponse response, boolean isError, MediaType defaultResponseMediaType, StreamingHelper streamingHelper) {
+			  logger.info("Start of toResult() method");
+			    Result.Builder<T, HttpResponseAttributes> builder = Result.builder();
+			    HttpEntity entity = response.getEntity();
+			    Object content = entity.getContent();
+			    if (isError)
+			      content = (streamingHelper != null) ? streamingHelper.resolveCursorProvider(content) : content; 
+			    builder.output((T) content);
+			    entity.getLength().ifPresent(builder::length);
+			    MediaType contentType = defaultResponseMediaType;
+			    String responseContentType = (String)response.getHeaders().get("Content-Type");
+			    if (responseContentType != null)
+			      try {
+			        contentType = MediaType.parse(responseContentType);
+			      } catch (Exception e) {
+			        if (logger.isDebugEnabled())
+			        	logger.debug(String.format("Response Content-Type '%s' could not be parsed to a valid Media Type. Will ignore", new Object[] { responseContentType }), e); 
+			      }  
+			    builder.mediaType(contentType);
+			    builder.attributes(toAttributes(response)).attributesMediaType(MediaType.APPLICATION_JAVA);
+			    return builder.build();
+			  }
+			  
+			  protected HttpRequest buildRequest(RestRequestBuilder requestBuilder) {
+			    return requestBuilder.build();
+		}
+			  
+				private HttpRequest getHttpRequest(RestRequestBuilder requestBuilder) {
+					logger.info("Start of getHttpRequest");
+				    MultiMap<String, String> headers = requestBuilder.getHeaders();
+				    MultiMap<String, String> queryParams = requestBuilder.getQueryParams();
+				    merge(this.defaultHeaders, k -> !headers.containsKey(k), requestBuilder::addHeaders);
+				    merge(this.defaultQueryParams, k -> !queryParams.containsKey(k), requestBuilder::addQueryParams);
+				    logger.info("Before calling and returning build request");
+				    return buildRequest(requestBuilder);
+				  }
+				
+				  private MultiMap<String, String> nullSafe(MultiMap<String, String> multiMap) {
+					    return (multiMap != null) ? multiMap : new MultiMap();
+					  }
+				  
+				  private void checkIfRemotelyClosed(Throwable exception, HttpRequest request) {
+					    if ("https".equals(request.getUri().getScheme()) && AriaUtility.containsIgnoreCase(exception.getMessage(), "Remotely closed"))
+					    	logger.error("Remote host closed connection. Possible SSL/TLS handshake issue. Check protocols, cipher suites and certificate set up. Use -Djavax.net.debug=ssl for further debugging."); 
+					  }
+				  protected HttpResponseAttributes toAttributes(HttpResponse response) {
+					    return new HttpResponseAttributes(response.getStatusCode(), response.getReasonPhrase(), response.getHeaders());
+					  }
+				  
+				  private void merge(MultiMap<String, String> defaultValues, Predicate<String> appendPredicate, BiConsumer<String, List<String>> appender) {
+					    defaultValues.keySet().forEach(k -> {
+					          if (appendPredicate.test(k))
+					            appender.accept(k, defaultValues.getAll(k)); 
+					        });
+					  }
 	
 	/*
 	 * public URLConnection createConnection(String baseURL, String client_number,
