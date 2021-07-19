@@ -140,7 +140,7 @@ public class AriaConnection {
 	
 	 private void handleResponse(HttpResponse response, MediaType defaultResponseMediaType, CompletableFuture<Result<InputStream, HttpResponseAttributes>> future, StreamingHelper streamingHelper) {
 		 logger.info("Start of HandleResponse" + response.getStatusCode());
-		 logger.info("Response: " + RestRequestBuilder.returnBodyString(new TypedValue<InputStream>(response.getEntity().getContent(),DataType.INPUT_STREAM)));
+		// logger.info("Response: " + RestRequestBuilder.returnBodyString(new TypedValue<InputStream>(response.getEntity().getContent(),DataType.INPUT_STREAM)));
 		 AriaErrorTypes error = AriaErrorTypes.getErrorByCode(response.getStatusCode()).orElse(null);
 		    if (error != null) {
 		    	logger.info("Before calling HandleResponse Error"); 
