@@ -50,14 +50,17 @@ public class AriaConnection {
 	
 	private final MultiMap<String, String> defaultHeaders;
 	
+	private final String configName;
+	
 
-	public AriaConnection(String baseURL, long client_no, String auth_key, HttpService httpService, MultiMap<String, String> defaultQueryParams, MultiMap<String, String> defaultHeaders) {
+	public AriaConnection(String baseURL, long client_no, String auth_key, String configName, HttpClient httpClient, MultiMap<String, String> defaultQueryParams, MultiMap<String, String> defaultHeaders) {
 		logger.info("Start of Aria connection constructor");
 		this.baseURL = baseURL;
 		this.client_no = client_no;
 		this.auth_key = auth_key;
+		this.configName = configName;
 		logger.info("Before httpClient Initialization");
-		this.httpClient = createClient(httpService);
+		this.httpClient = httpClient;
 		logger.info("After httpClient Initialization");
 	    this.defaultQueryParams = nullSafe(defaultQueryParams);
 	    this.defaultHeaders = nullSafe(defaultHeaders);
@@ -67,18 +70,14 @@ public class AriaConnection {
 		return httpClient;
 	}
 
-	private HttpClient createClient(HttpService httpService)
-	{
-		logger.info("1");
-		HttpClientConfiguration.Builder builder = new HttpClientConfiguration.Builder();
-		logger.info("2");
-		builder.setName("Aria-Connector");
-		HttpClient httpClient = httpService.getClientFactory().create(builder.build());
-		logger.info("3");
-		httpClient.start();
-		logger.info("4");
-		return httpClient;
-	}
+	/*
+	 * private HttpClient createClient(HttpService httpService) { logger.info("1");
+	 * HttpClientConfiguration.Builder builder = new
+	 * HttpClientConfiguration.Builder(); logger.info("2");
+	 * builder.setName("Aria-Connector"); HttpClient httpClient =
+	 * httpService.getClientFactory().create(builder.build()); logger.info("3");
+	 * httpClient.start(); logger.info("4"); return httpClient; }
+	 */
 	
 	public CompletableFuture<HttpResponse> sendRequest(String baseURL, long client_no, String auth_key, int responseTimeout) {
 		 logger.info("Inside sendRequest operation");
@@ -160,6 +159,7 @@ public class AriaConnection {
 			  logger.info("Start of HandleRequest Exception");
 		    checkIfRemotelyClosed(t, request);
 		    AriaErrorTypes error = (t instanceof TimeoutException) ? AriaErrorTypes.TIMEOUT : AriaErrorTypes.CONNECTIVITY;
+		    logger.info(t.getMessage());
 		    future.completeExceptionally((Throwable)new ModuleException(t.getMessage(), (ErrorTypeDefinition)error, t));
 		  }
 		  private <T> Result<T, HttpResponseAttributes> toResult(HttpResponse response, boolean isError, MediaType defaultResponseMediaType, StreamingHelper streamingHelper) {
@@ -217,6 +217,26 @@ public class AriaConnection {
 					            appender.accept(k, defaultValues.getAll(k)); 
 					        });
 					  }
+				  public final void stop() {
+					    try {
+					      beforeStop();
+					    } catch (Throwable t) {
+					    	logger.warn(String.format("Exception found before stopping config '%s'", new Object[] { this.configName }), t);
+					    } 
+					    try {
+					      this.httpClient.stop();
+					    } catch (Throwable t) {
+					    	logger.warn(String.format("Exception found while stopping http client for config '%s'", new Object[] { this.configName }), t);
+					    } 
+					    try {
+					      afterStop();
+					    } catch (Throwable t) {
+					    	logger.warn(String.format("Exception found after stopping config '%s'", new Object[] { this.configName }), t);
+					    } 
+					  }
+				  protected void beforeStop() {}
+				  
+				  protected void afterStop() {}
 	
 	/*
 	 * public URLConnection createConnection(String baseURL, String client_number,
