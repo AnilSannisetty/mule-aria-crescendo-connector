@@ -16,6 +16,7 @@ import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
+import org.mule.runtime.extension.api.annotation.param.display.Summary;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.process.CompletionCallback;
 import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
@@ -41,6 +42,7 @@ public class CreateAcctDunningGroup {
 
 	@DisplayName("CRUD:Create Account Dunning Group")
 	@MediaType(value = "application/json")
+	@Summary("Creates a new dunning group and optionally assigns the new dunning group to a plan instance.")
 	public void createDunningGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") CreateAcctDunningGroupParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

@@ -16,6 +16,7 @@ import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
+import org.mule.runtime.extension.api.annotation.param.display.Summary;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.process.CompletionCallback;
 import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
@@ -39,6 +40,7 @@ public class CreateAcctBillingGroup {
 
 	@DisplayName("CRUD:Create Account Billing Group")
 	@MediaType(value = "application/json")
+	@Summary("This Operation is used to create a new billing group, optionally assign a new payment method to this billing group, and to optionally assign this new billing group to a plan instance.")
 	public void createAccountBillingGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") CreateAcctBillingGrpParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

@@ -16,6 +16,7 @@ import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
+import org.mule.runtime.extension.api.annotation.param.display.Summary;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.process.CompletionCallback;
 import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
@@ -39,6 +40,20 @@ public class AssignAccountPlan {
 
 	@DisplayName("Assign Account Plan")
 	@MediaType(value = "application/json")
+	@Summary("Assigns a new master or supplemental plan to the specified account.\r\n"
+			+ "When you assign a new plan to an account, you can assign the following:\r\n"
+			+ "\r\n"
+			+ "Billing group\r\n"
+			+ "Notification method and template\r\n"
+			+ "Payment methods\r\n"
+			+ "Contact information for billing, statements, and payment methods\r\n"
+			+ "Dunning information\r\n"
+			+ "Start date and proration options\r\n"
+			+ "Balance forward\r\n"
+			+ "Relationship to other plans (parent, child, etc.)\r\n"
+			+ "Rate schedules\r\n"
+			+ "Coupons, promotion codes and surcharges\r\n"
+			+ "NSO and SKU information")
 	public void createAccountPlan(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") AssignAcctPlanParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

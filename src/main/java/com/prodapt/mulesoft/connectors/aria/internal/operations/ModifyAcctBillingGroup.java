@@ -16,6 +16,7 @@ import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
+import org.mule.runtime.extension.api.annotation.param.display.Summary;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.process.CompletionCallback;
 import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
@@ -39,6 +40,7 @@ public class ModifyAcctBillingGroup {
 
 	@DisplayName("CRUD:Update Account Billing Group")
 	@MediaType(value = "application/json")
+	@Summary("Updates information associated with a specified billing group.")
 	public void updateAccountBillingGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyAcctBillingGrpParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

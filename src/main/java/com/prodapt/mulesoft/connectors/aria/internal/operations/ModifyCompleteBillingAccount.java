@@ -16,6 +16,7 @@ import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
+import org.mule.runtime.extension.api.annotation.param.display.Summary;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.process.CompletionCallback;
 import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
@@ -39,6 +40,19 @@ public class ModifyCompleteBillingAccount {
 
 	@DisplayName("CRUD:Update Billing Account")
 	@MediaType(value = "application/json")
+	@Summary("This Update Account opreation allows you to update a broad range of information associated with an account. This information includes:\r\n"
+			+ "\r\n"
+			+ "User ID and related login information: Add or change user ID, password and secret question information for the account.\r\n"
+			+ "Contact information: Add or change account, billing and statement contact information, including name, address, email and phone number.\r\n"
+			+ "Statement information: Specify the statement notification method and format, such as HTML or PDF, and the associated template used to generate a statement for this account.\r\n"
+			+ "Parent and child plan assignment: Specify which plans on this account are parent plans or child plans and the relationships between them. You can also assign standard and custom rate schedules to plans on the account.\r\n"
+			+ "Collection, dunning and functional account group assignment: Specify the collection, dunning or functional account groups to which this account is assigned.\r\n"
+			+ "Payment method/term and taxation status: Specify if the account payment method is a card, direct debit, or a payment term, an whether the account is tax-exempt.\r\n"
+			+ "Invoicing/billing information: Specify proration policy and account or billing start/end dates.\r\n"
+			+ "Surcharges: Specify the type and amount of surcharges applied to the account.\r\n"
+			+ "Usage: Specify whether unbilled usage is invoiced and if usage pooling is enabled for the account,\r\n"
+			+ "Coupons and promotions: Specify coupons and promotions to be applied to the account.\r\n"
+			+ "Revenue recognition: Specify the revenue recognition profile assigned to this account.")
 	public void ModifyBillingAccount(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyCompleteBillingAccountParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

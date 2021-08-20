@@ -16,6 +16,7 @@ import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.MediaType;
 import org.mule.runtime.extension.api.annotation.param.ParameterGroup;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
+import org.mule.runtime.extension.api.annotation.param.display.Summary;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 import org.mule.runtime.extension.api.runtime.process.CompletionCallback;
 import org.mule.runtime.extension.api.runtime.streaming.StreamingHelper;
@@ -37,8 +38,9 @@ public class GetAllAccountDetails {
 	private static final Logger logger = LoggerFactory.getLogger(GetAllAccountDetails.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: All Account Details")
+	@DisplayName("GET: Account Details")
 	@MediaType(value = "application/json")
+	@Summary("This Operation returns a detailed set of information about an account. In addition to contact, demographic, and basic billing configuration information, you can optionally retrieve plan information, billing group information, and payment method information.")
 	public void GetAcctDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") GetAllAcctDetailsParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,
