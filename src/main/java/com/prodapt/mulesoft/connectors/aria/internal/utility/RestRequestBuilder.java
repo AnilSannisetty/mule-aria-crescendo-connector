@@ -20,8 +20,8 @@ import org.mule.runtime.http.api.domain.message.request.HttpRequestBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.enums.StreamingType;
 import com.prodapt.mulesoft.connectors.aria.api.operation.queryparam.QueryParamFormatter;
+import com.prodapt.mulesoft.connectors.aria.api.enums.StreamingType;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.api.operation.queryparam.CommaQueryParamFormatter;
 import com.prodapt.mulesoft.connectors.aria.api.operation.queryparam.MultimapQueryParamFormatter;

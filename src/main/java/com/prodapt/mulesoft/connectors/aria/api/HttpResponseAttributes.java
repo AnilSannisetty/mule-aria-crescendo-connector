@@ -1,4 +1,4 @@
-package com.prodapt.mulesoft.connectors.api;
+package com.prodapt.mulesoft.connectors.aria.api;
 
 import java.io.Serializable;
 import java.util.Map;
