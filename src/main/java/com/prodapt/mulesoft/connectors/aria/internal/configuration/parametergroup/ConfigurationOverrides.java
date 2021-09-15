@@ -8,7 +8,7 @@ import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.Placement;
 import org.mule.runtime.extension.api.annotation.param.display.Summary;
 
-import com.prodapt.mulesoft.connectors.aria.api.enums.StreamingType;
+import com.prodapt.mulesoft.connectors.api.enums.StreamingType;
 
 public class ConfigurationOverrides {
 	

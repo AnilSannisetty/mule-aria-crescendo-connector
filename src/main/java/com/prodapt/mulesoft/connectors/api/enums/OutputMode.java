@@ -1,4 +1,4 @@
-package com.prodapt.mulesoft.connectors.aria.api.enums;
+package com.prodapt.mulesoft.connectors.api.enums;
 
 public enum OutputMode {
 	JSON("json"),

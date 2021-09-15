@@ -23,7 +23,7 @@ import org.slf4j.LoggerFactory;
 import java.util.function.BiConsumer;
 import java.util.function.Predicate;
 
-import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.internal.error.AriaErrorTypes;
 import com.prodapt.mulesoft.connectors.aria.internal.error.exception.AriaException;
 import com.prodapt.mulesoft.connectors.aria.internal.utility.AriaUtility;

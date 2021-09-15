@@ -8,7 +8,7 @@ import org.mule.runtime.api.metadata.TypedValue;
 import org.mule.runtime.extension.api.exception.ModuleException;
 import org.mule.runtime.extension.api.runtime.operation.Result;
 
-import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.internal.error.AriaErrorTypes;
 
 public class AriaException extends ModuleException implements ErrorMessageAwareException {

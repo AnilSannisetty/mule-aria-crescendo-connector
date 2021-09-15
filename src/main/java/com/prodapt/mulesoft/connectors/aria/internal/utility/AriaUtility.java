@@ -9,7 +9,7 @@ import org.mule.runtime.http.api.domain.message.response.HttpResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.internal.connection.AriaConnection;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.BillingAcctRegistrationParam;
 
