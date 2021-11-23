@@ -47,6 +47,9 @@ GetInvoiceDetails.class, GetInvoiceHistory.class, ModifyAcctBillingGroup.class,
  GetInvoiceCMDetails.class, GetStatementForInvoice.class, GetOrder.class, ModifyOrder.class,
 GetAcctBalance.class, GetAcctPlanBalance.class,	GenInvoice.class, CreateCreditMemo.class, 
 	CreateOrder.class, CreateOrderWithPlan.class,	CancelOrder.class, CancelAcctPlan.class,
-	ModifyAcctPlan.class,ModifyAcctPlanStatus.class})
+	ModifyAcctPlan.class,ModifyAcctPlanStatus.class,BulkCancelOrder.class,ModifyCCBlacklist.class,CancelAcctUniversalContract.class,
+	CancelInstanceContract.class,CancelRecurringCredits.class,CancelUnappliedServiceCredits.class,
+	CancelUnconsumedCredit.class,RemoveAcctFromGroup.class,RemoveAcctPaymentMethod.class,
+	RemoveAcctPlanCustomRates.class})
 @ConnectionProviders(AriaConnectionProvider.class)
 public class AriaConfiguration extends RestConfiguration {}
