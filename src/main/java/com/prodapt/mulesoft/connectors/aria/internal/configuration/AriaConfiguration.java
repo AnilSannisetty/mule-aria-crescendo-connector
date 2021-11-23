@@ -38,7 +38,13 @@ import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlan;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlanStatus;
 
 
-@Operations({BillingAccountRegistration.class, ModifyCompleteBillingAccount.class, AssignAccountPlan.class, CreateAcctBillingGroup.class, CreateAcctDunningGroup.class, GetAllAccountDetails.class, GetInvoiceDetails.class, GetInvoiceHistory.class, ModifyAcctBillingGroup.class, ModifyAcctDunningGroup.class, ModifyAcctCredentials.class, ModifyAcctMultiPlans.class, ModifyAcctStatus.class, ModifyContact.class, ModifyPaymentMethod.class, ModifyAcctInvoice.class, GetInvoiceCMDetails.class, GetStatementForInvoice.class, GetOrder.class, ModifyOrder.class,
+@Operations({BillingAccountRegistration.class, ModifyCompleteBillingAccount.class, 
+AssignAccountPlan.class, CreateAcctBillingGroup.class, 
+CreateAcctDunningGroup.class, GetAllAccountDetails.class, 
+GetInvoiceDetails.class, GetInvoiceHistory.class, ModifyAcctBillingGroup.class,
+ ModifyAcctDunningGroup.class, ModifyAcctCredentials.class, ModifyAcctMultiPlans.class,
+ ModifyAcctStatus.class, ModifyContact.class, ModifyPaymentMethod.class, ModifyAcctInvoice.class,
+ GetInvoiceCMDetails.class, GetStatementForInvoice.class, GetOrder.class, ModifyOrder.class,
 GetAcctBalance.class, GetAcctPlanBalance.class,	GenInvoice.class, CreateCreditMemo.class, 
 	CreateOrder.class, CreateOrderWithPlan.class,	CancelOrder.class, CancelAcctPlan.class,
 	ModifyAcctPlan.class,ModifyAcctPlanStatus.class})
