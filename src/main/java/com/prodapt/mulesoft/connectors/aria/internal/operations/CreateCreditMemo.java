@@ -24,7 +24,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
