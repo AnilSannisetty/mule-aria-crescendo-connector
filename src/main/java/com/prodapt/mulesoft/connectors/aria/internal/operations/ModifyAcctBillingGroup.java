@@ -38,7 +38,7 @@ public class ModifyAcctBillingGroup {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctBillingGroup.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Update Account Billing Group")
+	@DisplayName("CRUD: Update Account Billing Group")
 	@MediaType(value = "application/json")
 	@Summary("Updates information associated with a specified billing group.")
 	public void updateAccountBillingGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,

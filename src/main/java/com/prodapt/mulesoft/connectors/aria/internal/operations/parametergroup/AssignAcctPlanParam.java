@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class AssignAcctPlanParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create Account Billing group")
+	@Summary("Aria API call to assign account plan")
 	@Optional(defaultValue = "assign_acct_plan_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

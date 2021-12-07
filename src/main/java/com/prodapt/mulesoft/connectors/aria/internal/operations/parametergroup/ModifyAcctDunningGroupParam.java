@@ -10,10 +10,16 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyAcctDunningGroupParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call update account dunning group")
+	@Summary("Aria API call to update account dunning group")
 	@Optional(defaultValue = "update_acct_dunning_group_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
+	
+	@Parameter
+	@DisplayName("API Version")
+	@Summary("Version of the API")
+	@Expression(ExpressionSupport.SUPPORTED)
+	private int releaseVersion;
 	
 	public String getRest_Call() {
 		return rest_Call;
@@ -31,11 +37,7 @@ public class ModifyAcctDunningGroupParam {
 		this.releaseVersion = releaseVersion;
 	}
 
-	@Parameter
-	@DisplayName("API Version")
-	@Summary("Version of the API")
-	@Expression(ExpressionSupport.SUPPORTED)
-	private int releaseVersion;
+	
 	
 /*	@Parameter
 	@DisplayName("Client Receipt Id")

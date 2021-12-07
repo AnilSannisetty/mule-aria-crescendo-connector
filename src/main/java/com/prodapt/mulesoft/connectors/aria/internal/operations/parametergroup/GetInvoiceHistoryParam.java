@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetInvoiceHistoryParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call get invoice details")
+	@Summary("Aria API call to get invoice details")
 	@Optional(defaultValue = "get_invoice_history_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

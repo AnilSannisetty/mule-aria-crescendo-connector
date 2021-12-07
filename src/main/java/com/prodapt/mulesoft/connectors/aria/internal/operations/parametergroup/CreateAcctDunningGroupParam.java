@@ -11,7 +11,7 @@ public class CreateAcctDunningGroupParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call create account dunning group")
+	@Summary("Aria API call to create account dunning group")
 	@Optional(defaultValue = "create_acct_dunning_group_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

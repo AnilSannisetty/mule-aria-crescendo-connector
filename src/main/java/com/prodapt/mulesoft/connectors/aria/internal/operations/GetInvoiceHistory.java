@@ -39,7 +39,7 @@ public class GetInvoiceHistory {
 	private static final Logger logger = LoggerFactory.getLogger(GetInvoiceHistory.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Get Invoice history")
+	@DisplayName("GET: Invoice history")
 	@MediaType(value = "application/json")
 	@Summary("Returns the invoice history for a specified master plan instance. The call can return invoices for all billing dates or only invoices for a particular billing date range.")
 	public void getInvoiceHistory(@Config RestConfiguration rc, @Connection AriaConnection ac,

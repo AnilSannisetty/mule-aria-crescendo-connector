@@ -38,7 +38,7 @@ public class GetAllAccountDetails {
 	private static final Logger logger = LoggerFactory.getLogger(GetAllAccountDetails.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Account Details")
+	@DisplayName("GET: Account Details All")
 	@MediaType(value = "application/json")
 	@Summary("This Operation returns a detailed set of information about an account. In addition to contact, demographic, and basic billing configuration information, you can optionally retrieve plan information, billing group information, and payment method information.")
 	public void GetAcctDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,
