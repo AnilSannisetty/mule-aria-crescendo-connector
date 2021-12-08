@@ -38,9 +38,9 @@ public class ModifyAcctCredentials {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctCredentials.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Update Account Credentials")
+	@DisplayName("CRUD: Update Account Credentials")
 	@MediaType(value = "application/json")
-	@Summary("Changes the password, secret question, secret answer, and/or personal identification number for a specified account.")
+	@Summary("This operation can be used to change the password, secret question, secret answer, and/or personal identification number for a specified account.")
 	public void modifyAcctCredentials(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyAcctCredentialsParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

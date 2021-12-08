@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,9 +38,9 @@ public class ModifyPaymentMethod {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyPaymentMethod.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Update Payment Method")
+	@DisplayName("CRUD: Update Payment Method")
 	@MediaType(value = "application/json")
-	@Summary("Allows to update payment method-related information associated with an account.")
+	@Summary("This operation allows to update payment method-related information associated with an account.")
 	public void modifyPaymentMethod(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyPaymentMethodParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

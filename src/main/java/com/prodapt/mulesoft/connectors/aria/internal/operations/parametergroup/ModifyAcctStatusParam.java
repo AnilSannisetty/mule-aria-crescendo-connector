@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyAcctStatusParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to updates status for a sprcific account.")
+	@Summary("Aria API call to update status for a specific account.")
 	@Optional(defaultValue = "update_acct_status_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

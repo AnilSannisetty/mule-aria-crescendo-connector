@@ -4,7 +4,7 @@
 
 	<groupId>com.prodapt.mulesoft.connectors</groupId>
 	<artifactId>mule-aria-crescendo-connector</artifactId>
-	<version>0.0.9</version>
+	<version>0.0.2</version>
 	<packaging>mule-extension</packaging>
 	<name>mule-aria-crescendo-connector</name>
 	

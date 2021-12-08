@@ -38,7 +38,7 @@ public class GetAcctPlanBalance {
 	private static final Logger logger = LoggerFactory.getLogger(GetAcctPlanBalance.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Get Account Plan Balance")
+	@DisplayName("GET: Account Plan Balance")
 	@MediaType(value = "application/json")
 	@Summary("This operation is used to return the balance for a specified master plan on a given account.")
 	public void getAcctPlanBalance(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetStatementForInvoiceParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to return a statement associated with a specified account and invoice.")
+	@Summary("Aria API call to return a statement associated with a specified account and invoice.")
 	@Optional(defaultValue = "get_statement_for_invoice_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

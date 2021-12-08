@@ -11,7 +11,7 @@ public class CreateCreditMemoParam {
 
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create Credit Memo")
+	@Summary("Aria API call to create credit memo")
 	@Optional(defaultValue = "create_cm_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

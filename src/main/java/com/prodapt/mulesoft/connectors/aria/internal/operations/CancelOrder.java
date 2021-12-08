@@ -38,12 +38,11 @@ public class CancelOrder {
 	private static final Logger logger = LoggerFactory.getLogger(CancelOrder.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Cancel Order")
+	@DisplayName("CRUD: Cancel Order")
 	@MediaType(value = "application/json")
-	@Summary("This operation Cancels an account holder's order and stops all billing related to the order"
-			+ " if the following are true: "
-			+ "The order has not yet been billed and "
-			+ "the order has not already been canceled..")
+	@Summary("This operation cancels an account holder's order and stops all billing related to the order if the following are true:"
+			+ "The order has not yet been billed and"
+			+ "The order has not already been canceled.")
 	public void cancelOrder(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") CancelOrderParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

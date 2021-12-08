@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetOrderParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to return information about the orders associated with a specified account.")
+	@Summary("Aria API call to return information about the orders associated with a specified account.")
 	@Optional(defaultValue = "get_order_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

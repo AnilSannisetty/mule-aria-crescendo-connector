@@ -40,9 +40,9 @@ public class GetOrder {
 	private static final Logger logger = LoggerFactory.getLogger(GetOrder.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Get Order")
+	@DisplayName("GET: Order Details")
 	@MediaType(value = "application/json")
-	@Summary("Returns information about the orders associated with a specified account.")
+	@Summary("This operation returns information about the orders associated with a specified account.")
 	public void getOrder(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") GetOrderParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

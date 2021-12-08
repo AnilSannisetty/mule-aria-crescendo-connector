@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,9 +38,9 @@ public class GetInvoiceCMDetails {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Get Invoice CM Details")
+	@DisplayName("GET: Invoice CM Details")
 	@MediaType(value = "application/json")
-	@Summary("Provides the allowable credit memo line values for a given invoice.")
+	@Summary("This operation provides the allowable credit memo line values for a given invoice.")
 	public void getInvoiceCMDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") GetInvoiceCMDetailsParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

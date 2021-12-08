@@ -39,9 +39,9 @@ public class GetInvoiceDetails {
 	private static final Logger logger = LoggerFactory.getLogger(GetInvoiceDetails.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Get Invoice details")
+	@DisplayName("GET: Invoice details")
 	@MediaType(value = "application/json")
-	@Summary("Returns the line items of a specified invoice.")
+	@Summary("This operation returns the line items of a specified invoice.")
 	public void getInvoiceDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") GetInvoiceDetailsParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

@@ -10,8 +10,8 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyAcctInvoiceParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to modify the custom status, and custom notes to an invoice.")
-	@Optional(defaultValue = "update_acct_status_m")
+	@Summary("Aria API call to modify the custom status, and custom notes to an invoice.")
+	@Optional(defaultValue = "update_acct_invoice_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
 	

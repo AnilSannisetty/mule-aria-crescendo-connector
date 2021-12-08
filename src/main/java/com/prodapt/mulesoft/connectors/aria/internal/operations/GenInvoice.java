@@ -38,9 +38,9 @@ public class GenInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(GenInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Generate Invoice")
+	@DisplayName("CRUD: Generate Invoice")
 	@MediaType(value = "application/json")
-	@Summary("This API generates invoices for specified master plan instance, a specific billing group under an account, "
+	@Summary("This operation generates invoices for specified master plan instance, a specific billing group under an account, "
 			+ "or for all the billing groups under the account. If a master plan instance has a pending invoice, "
 			+ "no other invoice can be applied to the master plan instance until the current pending invoice is approved. "
 			+ "An invoice does not generate if the master plan instance billing date is in the future.")

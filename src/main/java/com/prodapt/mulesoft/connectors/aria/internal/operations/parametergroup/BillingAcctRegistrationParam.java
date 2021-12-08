@@ -2,18 +2,17 @@ package com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup;
 
 import org.mule.runtime.api.meta.ExpressionSupport;
 import org.mule.runtime.extension.api.annotation.Expression;
-import org.mule.runtime.extension.api.annotation.param.Content;
+//import org.mule.runtime.extension.api.annotation.param.Content;
 import org.mule.runtime.extension.api.annotation.param.Optional;
 import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 import org.mule.runtime.extension.api.annotation.param.display.Summary;
 
-
 public class BillingAcctRegistrationParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call billing account registration")
+	@Summary("Aria API call to billing account registration")
 	@Optional(defaultValue = "create_acct_complete_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

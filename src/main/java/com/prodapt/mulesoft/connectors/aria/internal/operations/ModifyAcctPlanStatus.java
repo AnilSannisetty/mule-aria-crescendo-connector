@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,7 +38,7 @@ public class ModifyAcctPlanStatus {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctPlanStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Update Account Plan Status")
+	@DisplayName("CRUD: Update Account Plan Status")
 	@MediaType(value = "application/json")
 	@Summary("This operation sets the status of a master or supplemental plan for a given account "
 			+ "and optionally indicates the number of days or date in the future on which the status change"

@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetAllAcctDetailsParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create Account Billing group")
+	@Summary("Aria API call to get all account details")
 	@Optional(defaultValue = "get_acct_details_all_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
