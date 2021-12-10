@@ -12,7 +12,7 @@ public class RemoveAcctFromGroupParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to remove an Account from Group")
+	@Summary("Aria API call to remove an account from group.")
 	@Optional(defaultValue = "remove_acct_from_group_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

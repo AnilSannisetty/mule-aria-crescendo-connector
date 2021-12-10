@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,13 +38,13 @@ public class RemoveAcctFromGroup {
 	private static final Logger logger = LoggerFactory.getLogger(RemoveAcctFromGroup.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Remove Account From Group")
+	@DisplayName("CRUD: Remove Account From Group")
 	@MediaType(value = "application/json")
 	@Summary("This operation removes a specific account from a specified account group.\r\n"
 			+ "\r\n"
 			+ "Note:\r\n"
-			+ "To remove an account from a collection group, use the update_acct_complete_m API.\r\n"
-			+ "To disable an account's billing group or to remove a collection group from a billing group, use the update_acct_billing_group_m API.")
+			+ "To remove an account from a collection group, use the Update Billing Account operation(update_acct_complete_m API).\r\n"
+			+ "To disable an account's billing group or to remove a collection group from a billing group, use the Update Account Billing Group operation(update_acct_billing_group_m API).")
 	public void removeAcctFromGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") RemoveAcctFromGroupParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

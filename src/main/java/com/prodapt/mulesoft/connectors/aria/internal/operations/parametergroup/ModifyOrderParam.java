@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyOrderParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to update an Order for one or more inventory items ordered by a specified account holder. ")
+	@Summary("Aria API call to update an order for one or more inventory items ordered by a specified account holder.")
 	@Optional(defaultValue = "update_order_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

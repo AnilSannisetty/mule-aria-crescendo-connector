@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyAcctBillingGrpParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create Account Billing group")
+	@Summary("Aria API call to update account billing group.")
 	@Optional(defaultValue = "update_acct_billing_group_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyContactParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to updates contact for an account or billing group.")
+	@Summary("Aria API call to update contact for an account or billing group.")
 	@Optional(defaultValue = "update_contact_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

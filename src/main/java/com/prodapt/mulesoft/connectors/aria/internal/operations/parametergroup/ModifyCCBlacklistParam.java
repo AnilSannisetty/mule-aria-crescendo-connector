@@ -11,7 +11,7 @@ public class ModifyCCBlacklistParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to update card number entry in the blacklist")
+	@Summary("Aria API call to update card number entry in the blacklist.")
 	@Optional(defaultValue = "update_cc_blacklist_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

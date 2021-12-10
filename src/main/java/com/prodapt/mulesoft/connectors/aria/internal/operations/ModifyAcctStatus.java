@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,9 +38,9 @@ public class ModifyAcctStatus {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Update Account Status")
+	@DisplayName("CRUD: Update Account Status")
 	@MediaType(value = "application/json")
-	@Summary("Sets the status of a specified account and optionally indicates the number of days or date in the future on which the status change should go into effect.")
+	@Summary("This operation sets the status of a specified account and optionally indicates the number of days or date in the future on which the status change should go into effect.")
 	public void modifyAcctStatus(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyAcctStatusParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

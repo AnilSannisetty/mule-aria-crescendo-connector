@@ -11,7 +11,7 @@ public class ModifyCompleteBillingAccountParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call billing account registration")
+	@Summary("Aria API call to update billing account.")
 	@Optional(defaultValue = "update_acct_complete_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

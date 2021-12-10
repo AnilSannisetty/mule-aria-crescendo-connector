@@ -11,7 +11,7 @@ public class GenInvoiceParam {
 
 		@Parameter
 		@DisplayName("API Name")
-		@Summary("Aria API call to generate Invoice")
+		@Summary("Aria API call to generate invoice.")
 		@Optional(defaultValue = "gen_invoice_m")
 		@Expression(ExpressionSupport.SUPPORTED)
 		private String rest_Call;

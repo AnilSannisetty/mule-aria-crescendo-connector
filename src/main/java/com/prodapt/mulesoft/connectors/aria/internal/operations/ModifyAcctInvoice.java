@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,9 +38,9 @@ public class ModifyAcctInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Update Account Invoice")
+	@DisplayName("CRUD: Update Account Invoice")
 	@MediaType(value = "application/json")
-	@Summary("Modify the custom status, and custom notes to an invoice.")
+	@Summary("This operation is used to modify the custom status, and custom notes to an invoice.")
 	public void modifyAcctInvoice(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyAcctInvoiceParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

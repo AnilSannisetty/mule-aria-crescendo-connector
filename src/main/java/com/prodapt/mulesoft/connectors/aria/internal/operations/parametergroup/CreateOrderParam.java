@@ -11,7 +11,7 @@ public class CreateOrderParam {
 
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create order")
+	@Summary("Aria API call to create order.")
 	@Optional(defaultValue = "create_order_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetInvoiceCMDetailsParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API to provide the allowable credit memo line values for a given invoice.")
+	@Summary("Aria API call to provide the allowable credit memo line values for a given invoice.")
 	@Optional(defaultValue = "get_invoice_cm_details_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

@@ -40,9 +40,9 @@ public class CreateAcctDunningGroup {
 	private static final Logger logger = LoggerFactory.getLogger(CreateAcctDunningGroup.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD:Create Account Dunning Group")
+	@DisplayName("CRUD: Create Account Dunning Group")
 	@MediaType(value = "application/json")
-	@Summary("Creates a new dunning group and optionally assigns the new dunning group to a plan instance.")
+	@Summary("This operation creates a new dunning group and optionally assigns the new dunning group to a plan instance.")
 	public void createDunningGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") CreateAcctDunningGroupParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

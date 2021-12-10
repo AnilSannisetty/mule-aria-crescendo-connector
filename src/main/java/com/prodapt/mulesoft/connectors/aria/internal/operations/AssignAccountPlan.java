@@ -38,9 +38,9 @@ public class AssignAccountPlan {
 	private static final Logger logger = LoggerFactory.getLogger(AssignAccountPlan.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Assign Account Plan")
+	@DisplayName("CRUD: Assign Account Plan")
 	@MediaType(value = "application/json")
-	@Summary("Assigns a new master or supplemental plan to the specified account.\r\n"
+	@Summary("This operation assigns a new master or supplemental plan to the specified account.\r\n"
 			+ "When you assign a new plan to an account, you can assign the following:\r\n"
 			+ "\r\n"
 			+ "Billing group\r\n"
@@ -53,7 +53,7 @@ public class AssignAccountPlan {
 			+ "Relationship to other plans (parent, child, etc.)\r\n"
 			+ "Rate schedules\r\n"
 			+ "Coupons, promotion codes and surcharges\r\n"
-			+ "NSO and SKU information")
+			+ "NSO and SKU information.")
 	public void createAccountPlan(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") AssignAcctPlanParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

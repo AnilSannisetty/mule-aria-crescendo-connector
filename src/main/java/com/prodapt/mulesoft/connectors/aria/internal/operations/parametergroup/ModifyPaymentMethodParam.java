@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyPaymentMethodParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("This Aria API allows you to update payment method-related information associated with an account.")
+	@Summary("Aria API call to update payment method-related information associated with an account.")
 	@Optional(defaultValue = "update_payment_method_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

@@ -11,7 +11,7 @@ public class CancelRecurringCreditsParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel Recurring Credits")
+	@Summary("Aria API call to cancel recurring credits assigned on an account or master plan instance.")
 	@Optional(defaultValue = "cancel_recurring_credits_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

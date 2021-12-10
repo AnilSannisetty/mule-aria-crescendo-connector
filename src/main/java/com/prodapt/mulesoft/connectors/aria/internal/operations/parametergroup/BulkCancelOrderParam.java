@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class BulkCancelOrderParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel Bulk Orders")
+	@Summary("Aria API call to cancel bulk orders.")
 	@Optional(defaultValue = "bulk_cancel_order_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

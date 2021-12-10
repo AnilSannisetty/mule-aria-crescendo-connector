@@ -11,7 +11,7 @@ public class CancelUnconsumedCreditParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel Unconsumed Credit")
+	@Summary("Aria API call to cancel unconsumed credit associated with a particular coupon.")
 	@Optional(defaultValue = "cancel_unconsumed_credit_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

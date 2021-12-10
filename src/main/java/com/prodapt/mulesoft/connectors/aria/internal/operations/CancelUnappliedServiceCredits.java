@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,7 +38,7 @@ public class CancelUnappliedServiceCredits {
 	private static final Logger logger = LoggerFactory.getLogger(CancelUnappliedServiceCredits.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Cancel Unapplied Service Credits")
+	@DisplayName("CRUD: Cancel Unapplied Service Credits")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels all the unapplied service credits and any partially used recurring credits on an account or master plan instance.")
 	public void cancelUnappliedServiceCredits(@Config RestConfiguration rc, @Connection AriaConnection ac,

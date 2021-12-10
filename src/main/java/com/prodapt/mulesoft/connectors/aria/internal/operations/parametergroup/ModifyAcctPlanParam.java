@@ -11,7 +11,7 @@ public class ModifyAcctPlanParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call update account plan")
+	@Summary("Aria API call to update account plan.")
 	@Optional(defaultValue = "update_acct_plan_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

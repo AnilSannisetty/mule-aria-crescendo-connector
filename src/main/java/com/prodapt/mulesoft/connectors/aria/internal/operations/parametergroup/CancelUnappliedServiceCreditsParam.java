@@ -11,7 +11,7 @@ public class CancelUnappliedServiceCreditsParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel Unapplied Service Credits")
+	@Summary("Aria API call to cancel unapplied service credits on an account or master plan instance.")
 	@Optional(defaultValue = "cancel_unapplied_service_credits_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

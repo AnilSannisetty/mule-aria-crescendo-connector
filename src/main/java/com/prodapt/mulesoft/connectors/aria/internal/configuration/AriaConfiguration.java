@@ -5,51 +5,97 @@ import org.mule.runtime.extension.api.annotation.Operations;
 import org.mule.runtime.extension.api.annotation.connectivity.ConnectionProviders;
 
 import com.prodapt.mulesoft.connectors.aria.internal.connection.providers.AriaConnectionProvider;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ApplyServiceCredit;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.AssignAccountPlan;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.BanAccount;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.BillingAccountRegistration;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.BulkCancelOrder;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelAcctPlan;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelAcctUniversalContract;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelInstanceContract;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelOrder;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelRecurringCredits;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelUnappliedServiceCredits;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelUnconsumedCredit;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateAcctBillingGroup;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateAcctDunningGroup;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAllAccountDetails;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.GetClientPlanBasic;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateAdvancedServiceCredit;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateCreditMemo;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateOrder;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateOrderWithPlan;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateWriteoffOrDispute;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.DeleteAcctData;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GenInvoice;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctBalance;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctCouponDetails;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctDetailsAll;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctHierarchyDetails;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctPlanBalance;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctPlanUnitInstanceAll;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctPlansAll;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetChildAccts;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetCountryFromIp;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.GetInvoiceCMDetails;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.GetInvoiceDetails;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.GetInvoiceHistory;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetInvoicesToWriteoffOrDispute;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.GetOrder;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetPaymentsOnInvoice;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetPendingInvoiceNumber;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.GetStatementForInvoice;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.GetUnappliedServiceCredits;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ManagePendingInvoice;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctBillingGroup;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctCredentials;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctDunningGroup;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctInvoice;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctMultiPlans;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctNotifyMethod;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlan;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlanStatus;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlanUnitInstance;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctStatus;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyCCBlacklist;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyCompleteBillingAccount;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyContact;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyOrder;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyPaymentMethod;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctBalance;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.GetAcctPlanBalance;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.GenInvoice;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateCreditMemo;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateOrder;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.CreateOrderWithPlan;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelOrder;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.CancelAcctPlan;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlan;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.ModifyAcctPlanStatus;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.RemoveAcctFromGroup;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.RemoveAcctPaymentMethod;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.SettleAcctBalance;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.TransferAcctBalance;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.VoidInvoice;
 
-
-@Operations({BillingAccountRegistration.class, ModifyCompleteBillingAccount.class, 
-AssignAccountPlan.class, CreateAcctBillingGroup.class, 
-CreateAcctDunningGroup.class, GetAllAccountDetails.class, 
-GetInvoiceDetails.class, GetInvoiceHistory.class, ModifyAcctBillingGroup.class,
- ModifyAcctDunningGroup.class, ModifyAcctCredentials.class, ModifyAcctMultiPlans.class,
- ModifyAcctStatus.class, ModifyContact.class, ModifyPaymentMethod.class, ModifyAcctInvoice.class,
- GetInvoiceCMDetails.class, GetStatementForInvoice.class, GetOrder.class, ModifyOrder.class,
-GetAcctBalance.class, GetAcctPlanBalance.class,	GenInvoice.class, CreateCreditMemo.class, 
-	CreateOrder.class, CreateOrderWithPlan.class,	CancelOrder.class, CancelAcctPlan.class,
-	ModifyAcctPlan.class,ModifyAcctPlanStatus.class,BulkCancelOrder.class,ModifyCCBlacklist.class,CancelAcctUniversalContract.class,
-	CancelInstanceContract.class,CancelRecurringCredits.class,CancelUnappliedServiceCredits.class,
-	CancelUnconsumedCredit.class,RemoveAcctFromGroup.class,RemoveAcctPaymentMethod.class,
-	RemoveAcctPlanCustomRates.class})
+@Operations({ ApplyServiceCredit.class, AssignAccountPlan.class,
+	BanAccount.class, BillingAccountRegistration.class, 
+	BulkCancelOrder.class, 	CancelAcctPlan.class, 
+	CancelAcctUniversalContract.class, CancelInstanceContract.class,
+	CancelOrder.class,	CancelRecurringCredits.class,
+	CancelUnappliedServiceCredits.class, CancelUnconsumedCredit.class, 
+	CreateAcctBillingGroup.class, CreateAcctDunningGroup.class,
+	CreateAdvancedServiceCredit.class, CreateCreditMemo.class,
+	CreateOrder.class,	CreateOrderWithPlan.class,
+	CreateWriteoffOrDispute.class, DeleteAcctData.class,
+	GenInvoice.class, GetAcctBalance.class,
+	GetAcctCouponDetails.class, GetAcctDetailsAll.class,
+	GetAcctHierarchyDetails.class, GetAcctPlanBalance.class,
+	GetAcctPlansAll.class, GetAcctPlanUnitInstanceAll.class,
+	GetChildAccts.class, GetCountryFromIp.class,
+	GetInvoiceCMDetails.class, GetInvoiceDetails.class, 
+	GetInvoiceHistory.class, GetInvoicesToWriteoffOrDispute.class,
+	GetOrder.class, GetPaymentsOnInvoice.class,
+	GetPendingInvoiceNumber.class, GetStatementForInvoice.class,
+	GetUnappliedServiceCredits.class, ManagePendingInvoice.class,
+	ModifyAcctBillingGroup.class, ModifyAcctCredentials.class,
+	ModifyAcctDunningGroup.class, ModifyAcctInvoice.class, 
+	ModifyAcctMultiPlans.class, ModifyAcctNotifyMethod.class,
+	ModifyAcctPlan.class, ModifyAcctPlanStatus.class,
+	ModifyAcctPlanUnitInstance.class, ModifyAcctStatus.class,
+	ModifyCCBlacklist.class, ModifyCompleteBillingAccount.class,
+	ModifyContact.class, ModifyOrder.class,
+	ModifyPaymentMethod.class, RemoveAcctFromGroup.class,
+	RemoveAcctPaymentMethod.class, SettleAcctBalance.class,
+	TransferAcctBalance.class, VoidInvoice.class })
 @ConnectionProviders(AriaConnectionProvider.class)
-public class AriaConfiguration extends RestConfiguration {}
+public class AriaConfiguration extends RestConfiguration {
+}

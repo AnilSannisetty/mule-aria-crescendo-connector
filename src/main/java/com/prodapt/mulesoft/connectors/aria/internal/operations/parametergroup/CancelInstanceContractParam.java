@@ -11,8 +11,8 @@ public class CancelInstanceContractParam {
 
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel an instance contract to a specified account holder")
-	@Optional(defaultValue = "cancel_acct_universal_contract_m")
+	@Summary("Aria API call to cancel an instance contract to a specified account holder.")
+	@Optional(defaultValue = "cancel_instance_contract_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
 	

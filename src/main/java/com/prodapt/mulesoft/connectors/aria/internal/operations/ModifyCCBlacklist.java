@@ -25,7 +25,7 @@ import org.mule.runtime.http.api.client.HttpClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.prodapt.mulesoft.connectors.api.HttpResponseAttributes;
+import com.prodapt.mulesoft.connectors.aria.api.HttpResponseAttributes;
 import com.prodapt.mulesoft.connectors.aria.api.operation.RequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfiguration;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
@@ -38,7 +38,7 @@ public class ModifyCCBlacklist {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyCCBlacklist.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("Update CC Blacklist")
+	@DisplayName("CRUD: Update CC Blacklist")
 	@MediaType(value = "application/json")
 	@Summary("This operation adds or removes a card number entry in the blacklist.")
 	public void modifyCCBlacklist(@Config RestConfiguration rc, @Connection AriaConnection ac,
