@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetChildAcctsParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call that eturns all child account numbers associated with a specified parent account number.")
+	@Summary("Aria API call that returns all child account numbers associated with a specified parent account number.")
 	@Optional(defaultValue = "get_child_accts_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
