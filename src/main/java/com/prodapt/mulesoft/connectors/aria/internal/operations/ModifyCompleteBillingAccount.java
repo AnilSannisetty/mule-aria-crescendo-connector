@@ -38,7 +38,7 @@ public class ModifyCompleteBillingAccount {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyCompleteBillingAccount.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Billing Account")
+	@DisplayName("Update Billing Account")
 	@MediaType(value = "application/json")
 	@Summary("This Update Account opreation allows you to update a broad range of information associated with an account. This information includes:\r\n"
 			+ "\r\n"

@@ -39,7 +39,7 @@ public class ModifyAcctDunningGroup {
 	private static final Logger logger = LoggerFactory.getLogger(CreateAcctDunningGroup.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Dunning Group")
+	@DisplayName("Update Account Dunning Group")
 	@MediaType(value = "application/json")
 	@Summary("Updates information associated with a specified dunning group.")
 	public void modifyDunningGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,

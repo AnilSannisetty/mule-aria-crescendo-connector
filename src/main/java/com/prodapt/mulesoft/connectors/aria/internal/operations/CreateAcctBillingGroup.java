@@ -38,7 +38,7 @@ public class CreateAcctBillingGroup {
 	private static final Logger logger = LoggerFactory.getLogger(CreateAcctBillingGroup.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Create Account Billing Group")
+	@DisplayName("Create Account Billing Group")
 	@MediaType(value = "application/json")
 	@Summary("This Operation is used to create a new billing group, optionally assign a new payment method to this billing group, and to optionally assign this new billing group to a plan instance.")
 	public void createAccountBillingGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
