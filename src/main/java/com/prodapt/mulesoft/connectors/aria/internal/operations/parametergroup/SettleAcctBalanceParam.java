@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class SettleAcctBalanceParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to collect the outstanding balance for a specific master plan instance, OR an account.")
+	@Summary("Aria API call to collect the outstanding balance for a specific master plan instance or an account.")
 	@Optional(defaultValue = "settle_account_balance_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

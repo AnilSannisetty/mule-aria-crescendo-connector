@@ -43,7 +43,7 @@ public class BillingAccountRegistration {
 	private static final Logger logger = LoggerFactory.getLogger(BillingAccountRegistration.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Create Billing Account")
+	@DisplayName("Create Billing Account")
 	@MediaType(value = "application/json")
 	@Summary("This operation is used to  create multiple accounts within a parent-child account hierarchy and assigns multiple master plans and, optionally, multiple suppleresp_master_plan_inst_nomental plans to each account in the parent-child account hierarchy for Aria clients.\r\n"
 			+ "All of the following information can be assigned to the account as it is created using this operation.\r\n"

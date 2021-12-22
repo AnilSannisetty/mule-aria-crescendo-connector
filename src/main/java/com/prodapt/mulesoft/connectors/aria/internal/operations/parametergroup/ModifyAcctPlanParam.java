@@ -11,7 +11,7 @@ public class ModifyAcctPlanParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to update account plan.")
+	@Summary("Aria API call that updates in the context of an account's plan instance that plan's rates, number of units, associated coupons, status, plan instance description, plan instance fields, usage management tracking, and/or service location.")
 	@Optional(defaultValue = "update_acct_plan_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

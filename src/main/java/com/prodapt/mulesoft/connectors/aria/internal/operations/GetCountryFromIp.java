@@ -38,7 +38,7 @@ public class GetCountryFromIp {
 	private static final Logger logger = LoggerFactory.getLogger(GetCountryFromIp.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Country from IP")
+	@DisplayName("Get Country from IP")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns the county of origin for a specified IP address.")
 	public void getCountryFromIp(@Config RestConfiguration rc, @Connection AriaConnection ac,

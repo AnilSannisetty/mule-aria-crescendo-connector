@@ -38,7 +38,7 @@ public class SettleAcctBalance {
 	private static final Logger logger = LoggerFactory.getLogger(SettleAcctBalance.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Settle Account Balance")
+	@DisplayName("Settle Account Balance")
 	@MediaType(value = "application/json")
 	@Summary("This operation is used to collect the outstanding balance for a specific master plan instance, OR an account.")
 	public void settleAccountBalance(@Config RestConfiguration rc, @Connection AriaConnection ac,

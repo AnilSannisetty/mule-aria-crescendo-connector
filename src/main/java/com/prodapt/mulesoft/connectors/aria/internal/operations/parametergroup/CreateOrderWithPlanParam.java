@@ -11,7 +11,7 @@ public class CreateOrderWithPlanParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create order with plan on an invoice.")
+	@Summary("Aria API call that allows creation of order and plan changes on a single invoice.")
 	@Optional(defaultValue = "create_order_with_plan_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

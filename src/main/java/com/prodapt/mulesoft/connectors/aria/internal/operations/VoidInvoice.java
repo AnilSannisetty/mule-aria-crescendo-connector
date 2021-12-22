@@ -38,7 +38,7 @@ public class VoidInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(VoidInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Void Invoice")
+	@DisplayName("Void Invoice")
 	@MediaType(value = "application/json")
 	@Summary("This operation voids a given invoice object and all its associated transactions. Voiding an invoice is permanent and cannot be undone.")
 	public void voidInvoice(@Config RestConfiguration rc, @Connection AriaConnection ac,

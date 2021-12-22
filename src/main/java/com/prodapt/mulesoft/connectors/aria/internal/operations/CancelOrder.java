@@ -38,7 +38,7 @@ public class CancelOrder {
 	private static final Logger logger = LoggerFactory.getLogger(CancelOrder.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Order")
+	@DisplayName("Cancel Order")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels an account holder's order and stops all billing related to the order if the following are true:"
 			+ "The order has not yet been billed and"

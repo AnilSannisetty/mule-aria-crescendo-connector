@@ -38,7 +38,7 @@ public class CancelUnconsumedCredit {
 	private static final Logger logger = LoggerFactory.getLogger(CancelUnconsumedCredit.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Unconsumed Credit")
+	@DisplayName("Cancel Unconsumed Credit")
 	@MediaType(value = "application/json")
 	@Summary("This operation deletes all unused credits associated with a particular coupon.")
 	public void cancelUnconsumedCredit(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -11,7 +11,7 @@ public class ModifyAcctPlanStatusParam {
 
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to update account plan status.")
+	@Summary("Aria API call that sets the status of a master or supplemental plan for a given account and optionally indicates the number of days or date in the future on which the status change should go into effect.")
 	@Optional(defaultValue = "update_acct_plan_status_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

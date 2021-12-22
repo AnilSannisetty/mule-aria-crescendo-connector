@@ -38,7 +38,7 @@ public class GetInvoiceCMDetails {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Invoice CM Details")
+	@DisplayName("Get Invoice CM Details")
 	@MediaType(value = "application/json")
 	@Summary("This operation provides the allowable credit memo line values for a given invoice.")
 	public void getInvoiceCMDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,

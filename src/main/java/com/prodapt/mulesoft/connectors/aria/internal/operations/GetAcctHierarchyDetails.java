@@ -38,7 +38,7 @@ public class GetAcctHierarchyDetails {
 	private static final Logger logger = LoggerFactory.getLogger(GetAcctHierarchyDetails.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Account Hierarchy Details")
+	@DisplayName("Get Account Hierarchy Details")
 	@MediaType(value = "application/json")
 	@Summary("This operation is used to retrieve the account details, and also the details of its master plan instances, supplemental plan instances, billing groups, and payment methods (based on various filter flags in the input). It is also capable of fetching the details of its parent and child account details.")
 	public void getAcctHierarchyDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,

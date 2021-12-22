@@ -38,7 +38,7 @@ public class GetUnappliedServiceCredits {
 	private static final Logger logger = LoggerFactory.getLogger(GetUnappliedServiceCredits.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Unapplied Service Credits")
+	@DisplayName("Get Unapplied Service Credits")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns all service credits whose credit amounts have not yet been fully applied for a specified account or master plan instance.")
 	public void getUnappliedServiceCredits(@Config RestConfiguration rc, @Connection AriaConnection ac,

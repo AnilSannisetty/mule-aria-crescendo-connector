@@ -38,7 +38,7 @@ public class ModifyCCBlacklist {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyCCBlacklist.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update CC Blacklist")
+	@DisplayName("Update CC Blacklist")
 	@MediaType(value = "application/json")
 	@Summary("This operation adds or removes a card number entry in the blacklist.")
 	public void modifyCCBlacklist(@Config RestConfiguration rc, @Connection AriaConnection ac,

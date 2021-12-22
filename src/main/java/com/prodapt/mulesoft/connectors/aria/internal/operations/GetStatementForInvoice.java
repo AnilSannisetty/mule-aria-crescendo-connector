@@ -38,7 +38,7 @@ public class GetStatementForInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(GetStatementForInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Statement For Invoice")
+	@DisplayName("Get Statement For Invoice")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns a statement associated with a specified account and invoice.")
 	public void getStatementForInvoice(@Config RestConfiguration rc, @Connection AriaConnection ac,

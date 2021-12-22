@@ -38,7 +38,7 @@ public class GetAcctPlanUnitInstanceAll {
 	private static final Logger logger = LoggerFactory.getLogger(GetAcctPlanUnitInstanceAll.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Account Plan Unit Instance All")
+	@DisplayName("Get Account Plan Unit Instance All")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns an array of all Plan Unit Instances and related Plan Unit Instance fields for all the plans under the account.")
 	public void getAcctPlanUnitInstanceAll(@Config RestConfiguration rc, @Connection AriaConnection ac,

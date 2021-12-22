@@ -38,7 +38,7 @@ public class BulkCancelOrder {
 	private static final Logger logger = LoggerFactory.getLogger(BulkCancelOrder.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Bulk Cancel Order")
+	@DisplayName("Bulk Cancel Order")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels one or more account holder's order(s) and stops all billing related to the order(s) if the following are true: The order(s) has not yet been billed and the order has not already been canceled.  Please note that save/commit of canceled orders will be at the bulk_input_idx level.")
 	public void bulkCancelOrder(@Config RestConfiguration rc, @Connection AriaConnection ac,

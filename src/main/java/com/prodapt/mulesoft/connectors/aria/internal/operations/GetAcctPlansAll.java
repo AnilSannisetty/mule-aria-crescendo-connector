@@ -38,7 +38,7 @@ public class GetAcctPlansAll {
 	private static final Logger logger = LoggerFactory.getLogger(GetAcctPlansAll.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Account Plans All")
+	@DisplayName("Get Account Plans All")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns the plan, service, and rate schedule data for all master and supplemental plans assigned to a specified account.")
 	public void getAcctPlansAll(@Config RestConfiguration rc, @Connection AriaConnection ac,

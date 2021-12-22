@@ -38,7 +38,7 @@ public class RemoveAcctPaymentMethod {
 	private static final Logger logger = LoggerFactory.getLogger(RemoveAcctPaymentMethod.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Remove Account Payment Method")
+	@DisplayName("Remove Account Payment Method")
 	@MediaType(value = "application/json")
 	@Summary("This operation removes a form of payment from an account, either associated with a specified billing group, or not.")
 	public void removeAccountPaymentMethod(@Config RestConfiguration rc, @Connection AriaConnection ac,

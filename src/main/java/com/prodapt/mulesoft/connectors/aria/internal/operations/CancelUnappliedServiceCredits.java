@@ -38,7 +38,7 @@ public class CancelUnappliedServiceCredits {
 	private static final Logger logger = LoggerFactory.getLogger(CancelUnappliedServiceCredits.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Unapplied Service Credits")
+	@DisplayName("Cancel Unapplied Service Credits")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels all the unapplied service credits and any partially used recurring credits on an account or master plan instance.")
 	public void cancelUnappliedServiceCredits(@Config RestConfiguration rc, @Connection AriaConnection ac,

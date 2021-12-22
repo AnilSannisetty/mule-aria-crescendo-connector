@@ -38,7 +38,7 @@ public class ModifyAcctNotifyMethod {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctNotifyMethod.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Notify Method")
+	@DisplayName("Update Account Notify Method")
 	@MediaType(value = "application/json")
 	@Summary("This operation sets the method by which invoices are sent to a specified account.")
 	public void modifyAcctNotifyMethod(@Config RestConfiguration rc, @Connection AriaConnection ac,

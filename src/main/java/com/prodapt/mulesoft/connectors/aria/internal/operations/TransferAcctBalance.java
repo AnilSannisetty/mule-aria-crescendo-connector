@@ -38,7 +38,7 @@ public class TransferAcctBalance {
 	private static final Logger logger = LoggerFactory.getLogger(TransferAcctBalance.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Transfer Account Balance")
+	@DisplayName("Transfer Account Balance")
 	@MediaType(value = "application/json")
 	@Summary("This operation can be used to transfer the balance from one account to another account.")
 	public void transferAcctBalance(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetAcctCouponDetailsParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to get information about the orders associated with a specified account.")
+	@Summary("Aria API call that provides detailed information including credit templates, discount rules, and discount bundles for coupons that are assigned to an account or a master plan instance.")
 	@Optional(defaultValue = "get_acct_coupon_details_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

@@ -38,7 +38,7 @@ public class RemoveAcctFromGroup {
 	private static final Logger logger = LoggerFactory.getLogger(RemoveAcctFromGroup.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Remove Account From Group")
+	@DisplayName("Remove Account From Group")
 	@MediaType(value = "application/json")
 	@Summary("This operation removes a specific account from a specified account group.\r\n"
 			+ "\r\n"

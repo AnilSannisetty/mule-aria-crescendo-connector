@@ -38,7 +38,7 @@ public class CreateWriteoffOrDispute {
 	private static final Logger logger = LoggerFactory.getLogger(CreateWriteoffOrDispute.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Create Writeoff Or Dispute")
+	@DisplayName("Create Writeoff Or Dispute")
 	@MediaType(value = "application/json")
 	@Summary("This operation creates writeoff or dispute-hold for a given invoice.")
 	public void createWriteoffOrDispute(@Config RestConfiguration rc, @Connection AriaConnection ac,

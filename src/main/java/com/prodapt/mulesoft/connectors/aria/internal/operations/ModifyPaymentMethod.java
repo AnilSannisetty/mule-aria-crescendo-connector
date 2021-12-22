@@ -38,7 +38,7 @@ public class ModifyPaymentMethod {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyPaymentMethod.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Payment Method")
+	@DisplayName("Update Payment Method")
 	@MediaType(value = "application/json")
 	@Summary("This operation allows to update payment method-related information associated with an account.")
 	public void modifyPaymentMethod(@Config RestConfiguration rc, @Connection AriaConnection ac,

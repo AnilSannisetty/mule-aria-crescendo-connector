@@ -38,7 +38,7 @@ public class GetAcctCouponDetails {
 	private static final Logger logger = LoggerFactory.getLogger(GetAcctCouponDetails.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Account Coupon Details")
+	@DisplayName("Get Account Coupon Details")
 	@MediaType(value = "application/json")
 	@Summary("This operation provides detailed information including credit templates, discount rules, and discount bundles for coupons that are assigned to an account or a master plan instance.")
 	public void getAcctCouponDetailsParam(@Config RestConfiguration rc, @Connection AriaConnection ac,

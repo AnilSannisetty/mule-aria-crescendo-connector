@@ -11,7 +11,7 @@ public class RemoveAcctPaymentMethodParam {
 
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to remove a payment method from an account.")
+	@Summary("Aria API call to remove a form of payment from an account, either associated with a specified billing group, or not.")
 	@Optional(defaultValue = "remove_acct_payment_method_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

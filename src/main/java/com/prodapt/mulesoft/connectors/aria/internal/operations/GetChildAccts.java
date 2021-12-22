@@ -38,7 +38,7 @@ public class GetChildAccts {
 	private static final Logger logger = LoggerFactory.getLogger(GetChildAccts.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Child Accounts")
+	@DisplayName("Get Child Accounts")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns all child account numbers associated with a specified parent account number.")
 	public void getChildAccts(@Config RestConfiguration rc, @Connection AriaConnection ac,

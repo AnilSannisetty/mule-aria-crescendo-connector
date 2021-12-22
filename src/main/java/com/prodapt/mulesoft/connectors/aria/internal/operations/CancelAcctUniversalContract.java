@@ -38,7 +38,7 @@ public class CancelAcctUniversalContract {
 	private static final Logger logger = LoggerFactory.getLogger(CancelAcctUniversalContract.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Account Universal Contract")
+	@DisplayName("Cancel Account Universal Contract")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels a universal contract assigned to a specified account holder.")
 	public void cancelAcctUniversalContract(@Config RestConfiguration rc, @Connection AriaConnection ac,

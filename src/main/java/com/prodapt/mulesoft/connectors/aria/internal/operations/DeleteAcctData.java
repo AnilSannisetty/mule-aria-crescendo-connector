@@ -38,7 +38,7 @@ public class DeleteAcctData {
 	private static final Logger logger = LoggerFactory.getLogger(DeleteAcctData.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Delete Account Data")
+	@DisplayName("Delete Account Data")
 	@MediaType(value = "application/json")
 	@Summary("This operation will delete (anonymize) an individual account’s data in compliance with the General Data Protection Regulation (GDPR).")
 	public void deleteAcctData(@Config RestConfiguration rc, @Connection AriaConnection ac,

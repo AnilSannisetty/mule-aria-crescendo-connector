@@ -38,7 +38,7 @@ public class BanAccount {
 	private static final Logger logger = LoggerFactory.getLogger(BanAccount.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Ban Account")
+	@DisplayName("Ban Account")
 	@MediaType(value = "application/json")
 	@Summary("This operation sets an account's status to temporary ban and, optionally, specifies when the ban will be removed and the account returned to its previous status: either on a specific date (date_to_restore) or after a specified number of days (days_to_restore).")
 	public void banAccount(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -38,7 +38,7 @@ public class ModifyAcctPlanStatus {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctPlanStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Plan Status")
+	@DisplayName("Update Account Plan Status")
 	@MediaType(value = "application/json")
 	@Summary("This operation sets the status of a master or supplemental plan for a given account "
 			+ "and optionally indicates the number of days or date in the future on which the status change"

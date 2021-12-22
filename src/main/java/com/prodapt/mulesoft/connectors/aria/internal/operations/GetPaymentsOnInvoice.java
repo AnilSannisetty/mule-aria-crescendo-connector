@@ -38,7 +38,7 @@ public class GetPaymentsOnInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(GetPaymentsOnInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Payments On Invoice")
+	@DisplayName("Get Payments On Invoice")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns a list of payments that are applied against a given invoice.")
 	public void getPaymentsOnInvoice(@Config RestConfiguration rc, @Connection AriaConnection ac,

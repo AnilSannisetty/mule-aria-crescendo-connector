@@ -38,7 +38,7 @@ public class ModifyAcctPlan {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctPlan.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Plan")
+	@DisplayName("Update Account Plan")
 	@MediaType(value = "application/json")
 	@Summary("This operation updates in the context of an account's plan instance that plan's rates, "
 			+ "number of units, associated coupons, status, plan instance description, "

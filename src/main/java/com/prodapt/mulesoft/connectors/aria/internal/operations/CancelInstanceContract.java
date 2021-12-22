@@ -38,7 +38,7 @@ public class CancelInstanceContract {
 	private static final Logger logger = LoggerFactory.getLogger(CancelInstanceContract.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Instance Contract")
+	@DisplayName("Cancel Instance Contract")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels an existing multi plan instance contract for a specified account holder and one or more plan instances.")
 	public void cancelInstanceContract(@Config RestConfiguration rc, @Connection AriaConnection ac,

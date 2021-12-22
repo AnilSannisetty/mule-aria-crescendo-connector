@@ -34,13 +34,11 @@ import com.prodapt.mulesoft.connectors.aria.internal.connection.AriaConnection;
 import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.GetOrderParam;
 import com.prodapt.mulesoft.connectors.aria.internal.utility.RestRequestBuilder;
 
-
-
 public class GetOrder {
 	private static final Logger logger = LoggerFactory.getLogger(GetOrder.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Order Details")
+	@DisplayName("Get Order")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns information about the orders associated with a specified account.")
 	public void getOrder(@Config RestConfiguration rc, @Connection AriaConnection ac,

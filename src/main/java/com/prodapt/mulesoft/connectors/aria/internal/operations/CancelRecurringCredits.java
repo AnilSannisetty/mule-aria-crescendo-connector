@@ -38,7 +38,7 @@ public class CancelRecurringCredits {
 	private static final Logger logger = LoggerFactory.getLogger(CancelRecurringCredits.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Recurring Credits")
+	@DisplayName("Cancel Recurring Credits")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels any recurring credits that are assigned on an account or master plan instance.")
 	public void cancelRecurringCredits(@Config RestConfiguration rc, @Connection AriaConnection ac,

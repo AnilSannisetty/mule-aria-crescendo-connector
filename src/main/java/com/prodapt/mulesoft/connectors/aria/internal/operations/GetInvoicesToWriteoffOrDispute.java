@@ -38,7 +38,7 @@ public class GetInvoicesToWriteoffOrDispute {
 	private static final Logger logger = LoggerFactory.getLogger(GetInvoicesToWriteoffOrDispute.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Invoices To Writeoff Or Dispute")
+	@DisplayName("Get Invoices To Writeoff Or Dispute")
 	@MediaType(value = "application/json")
 	@Summary("This operation is used to retrieve eligible invoices to write-off or dispute.")
 	public void getInvoicesToWriteoffOrDispute(@Config RestConfiguration rc, @Connection AriaConnection ac,

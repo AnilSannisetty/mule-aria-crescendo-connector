@@ -38,7 +38,7 @@ public class ApplyServiceCredit {
 	private static final Logger logger = LoggerFactory.getLogger(ApplyServiceCredit.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Apply Service Credit")
+	@DisplayName("Apply Service Credit")
 	@MediaType(value = "application/json")
 	@Summary("This operation applies a service credit to a specified account or a master plan instance.")
 	public void applyServiceCredit(@Config RestConfiguration rc, @Connection AriaConnection ac,

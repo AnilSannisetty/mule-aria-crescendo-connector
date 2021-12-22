@@ -37,7 +37,7 @@ public class ManagePendingInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(ManagePendingInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Manage Pending Invoice")
+	@DisplayName("Manage Pending Invoice")
 	@MediaType(value = "application/json")
 	@Summary("This operation can be used to approve, discard, or regenerate a pending invoice. A pending invoice can be retrieved based on the invoice number or master plan instance ID. After a pending invoice is approved, this operation can also collect a payment and send a statement. If the collection fails, the pending invoice will automatically be voided provided the system setting \"Auto Void Pending Invoice on Collection Failure\" is set to True. This operation can also set the custom_status_label, and client_notes at the time of approval, or regeneration.")
 	public void managePendingInvoice(@Config RestConfiguration rc, @Connection AriaConnection ac,

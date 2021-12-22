@@ -38,7 +38,7 @@ public class ModifyAcctInvoice {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Invoice")
+	@DisplayName("Update Account Invoice")
 	@MediaType(value = "application/json")
 	@Summary("This operation is used to modify the custom status, and custom notes to an invoice.")
 	public void modifyAcctInvoice(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class GetAcctPlanBalanceParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to get account plan balance.")
+	@Summary("Aria API call to get the balance for a specified master plan on a given account.")
 	@Optional(defaultValue = "get_acct_plan_balance_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

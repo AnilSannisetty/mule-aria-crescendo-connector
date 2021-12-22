@@ -38,7 +38,7 @@ public class CreateAdvancedServiceCredit {
 	private static final Logger logger = LoggerFactory.getLogger(CreateAdvancedServiceCredit.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Create Advanced Service Credit")
+	@DisplayName("Create Advanced Service Credit")
 	@MediaType(value = "application/json")
 	@Summary("This operation creates service credit in advance on an account or master plan instance.")
 	public void createAdvancedServiceCredit(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -38,7 +38,7 @@ public class GetPendingInvoiceNumber{
 	private static final Logger logger = LoggerFactory.getLogger(GetPendingInvoiceNumber.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Pending Invoice Number")
+	@DisplayName("Get Pending Invoice Number")
 	@MediaType(value = "application/json")
 	@Summary("This operation can be used to return the invoice number of a pending invoice associated with a specified account or master plan instance. If <acct_no>, or <client_acct_id> is alone passed as an input parameter, then this operation returns an array of pending invoices for all master plan instances associated with an account.")
 	public void getPendingInvoiceNumber(@Config RestConfiguration rc, @Connection AriaConnection ac,
