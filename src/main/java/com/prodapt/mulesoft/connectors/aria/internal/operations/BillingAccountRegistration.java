@@ -45,7 +45,7 @@ public class BillingAccountRegistration {
 
 	@DisplayName("Create Billing Account")
 	@MediaType(value = "application/json")
-	@Summary("This Operation is used to  create multiple accounts within a parent-child account hierarchy and assigns multiple master plans and, optionally, multiple suppleresp_master_plan_inst_nomental plans to each account in the parent-child account hierarchy for Aria clients.\r\n"
+	@Summary("This operation is used to  create multiple accounts within a parent-child account hierarchy and assigns multiple master plans and, optionally, multiple suppleresp_master_plan_inst_nomental plans to each account in the parent-child account hierarchy for Aria clients.\r\n"
 			+ "All of the following information can be assigned to the account as it is created using this operation.\r\n"
 			+ "\r\n"
 			+ "User ID and related login information: User ID, password and secret question information for the account.\r\n"

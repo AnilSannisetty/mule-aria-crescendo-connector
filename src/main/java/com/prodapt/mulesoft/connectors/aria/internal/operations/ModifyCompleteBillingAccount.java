@@ -40,7 +40,7 @@ public class ModifyCompleteBillingAccount {
 
 	@DisplayName("Update Billing Account")
 	@MediaType(value = "application/json")
-	@Summary("This Update Account opreation allows you to update a broad range of information associated with an account. This information includes:\r\n"
+	@Summary("This operation allows you to update a broad range of information associated with an account. This information includes:\r\n"
 			+ "\r\n"
 			+ "User ID and related login information: Add or change user ID, password and secret question information for the account.\r\n"
 			+ "Contact information: Add or change account, billing and statement contact information, including name, address, email and phone number.\r\n"

@@ -41,7 +41,7 @@ public class ModifyAcctDunningGroup {
 
 	@DisplayName("Update Account Dunning Group")
 	@MediaType(value = "application/json")
-	@Summary("Updates information associated with a specified dunning group.")
+	@Summary("This operation updates information associated with a specified dunning group.")
 	public void modifyDunningGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyAcctDunningGroupParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

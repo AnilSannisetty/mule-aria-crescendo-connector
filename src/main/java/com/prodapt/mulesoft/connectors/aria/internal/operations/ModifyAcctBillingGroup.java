@@ -31,7 +31,7 @@ import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfigura
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.EntityRequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.connection.AriaConnection;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.ModifyAcctBillingGrpParam;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.ModifyAcctBillingGroupParam;
 import com.prodapt.mulesoft.connectors.aria.internal.utility.RestRequestBuilder;
 
 public class ModifyAcctBillingGroup {
@@ -40,9 +40,9 @@ public class ModifyAcctBillingGroup {
 
 	@DisplayName("Update Account Billing Group")
 	@MediaType(value = "application/json")
-	@Summary("Updates information associated with a specified billing group.")
+	@Summary("This operation updates information associated with a specified billing group.")
 	public void updateAccountBillingGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
-			@ParameterGroup(name = "Input Arguments") ModifyAcctBillingGrpParam ar,
+			@ParameterGroup(name = "Input Arguments") ModifyAcctBillingGroupParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,
 			@ParameterGroup(name = "Connector Overrides") ConfigurationOverrides overrides,
 			@Content(primary = true) TypedValue<InputStream> payload, StreamingHelper streamingHelper,
@@ -79,7 +79,7 @@ public class ModifyAcctBillingGroup {
 			}
 		};
 	}
-private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, ModifyAcctBillingGrpParam ar) {
+private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, ModifyAcctBillingGroupParam ar) {
 		
 		StringBuilder strRequestPayload = new StringBuilder();
 		BufferedReader brStream =  new BufferedReader(new InputStreamReader(payload.getValue()));

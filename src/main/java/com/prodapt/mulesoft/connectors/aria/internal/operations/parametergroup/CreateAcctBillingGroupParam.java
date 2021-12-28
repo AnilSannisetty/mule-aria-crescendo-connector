@@ -7,11 +7,11 @@ import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 import org.mule.runtime.extension.api.annotation.param.display.Summary;
 
-public class AssignAcctPlanParam {
+public class CreateAcctBillingGroupParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to assign account plan")
-	@Optional(defaultValue = "assign_acct_plan_m")
+	@Summary("Aria API call to create account billing group.")
+	@Optional(defaultValue = "create_acct_billing_group_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
 	
@@ -21,11 +21,6 @@ public class AssignAcctPlanParam {
 	@Expression(ExpressionSupport.SUPPORTED)
 	private int releaseVersion;
 	
-	@Parameter
-	@DisplayName("Do Write")
-	@Summary("Default value is true")
-	@Optional(defaultValue = "true")
-	private boolean do_write;
 	
 	@Parameter
 	@DisplayName("Client Receipt Id")
@@ -49,13 +44,6 @@ public class AssignAcctPlanParam {
 		this.releaseVersion = releaseVersion;
 	}
 
-	public boolean isDo_write() {
-		return do_write;
-	}
-
-	public void setDo_write(boolean do_write) {
-		this.do_write = do_write;
-	}
 
 	public String getClient_receipt_id() {
 		return client_receipt_id;
@@ -64,4 +52,5 @@ public class AssignAcctPlanParam {
 	public void setClient_receipt_id(String client_receipt_id) {
 		this.client_receipt_id = client_receipt_id;
 	}
+
 }

@@ -31,7 +31,7 @@ import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfigura
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.EntityRequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.connection.AriaConnection;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.AssignAcctPlanParam;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.AssignAccountPlanParam;
 import com.prodapt.mulesoft.connectors.aria.internal.utility.RestRequestBuilder;
 
 public class AssignAccountPlan {
@@ -40,7 +40,7 @@ public class AssignAccountPlan {
 
 	@DisplayName("Assign Account Plan")
 	@MediaType(value = "application/json")
-	@Summary("Assigns a new master or supplemental plan to the specified account.\r\n"
+	@Summary("This operation assigns a new master or supplemental plan to the specified account.\r\n"
 			+ "When you assign a new plan to an account, you can assign the following:\r\n"
 			+ "\r\n"
 			+ "Billing group\r\n"
@@ -53,9 +53,9 @@ public class AssignAccountPlan {
 			+ "Relationship to other plans (parent, child, etc.)\r\n"
 			+ "Rate schedules\r\n"
 			+ "Coupons, promotion codes and surcharges\r\n"
-			+ "NSO and SKU information")
+			+ "NSO and SKU information.")
 	public void createAccountPlan(@Config RestConfiguration rc, @Connection AriaConnection ac,
-			@ParameterGroup(name = "Input Arguments") AssignAcctPlanParam ar,
+			@ParameterGroup(name = "Input Arguments") AssignAccountPlanParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,
 			@ParameterGroup(name = "Connector Overrides") ConfigurationOverrides overrides,
 			@Content(primary = true) TypedValue<InputStream> payload, StreamingHelper streamingHelper,
@@ -92,7 +92,7 @@ public class AssignAccountPlan {
 			}
 		};
 	}
-private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, AssignAcctPlanParam ar) {
+private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, AssignAccountPlanParam ar) {
 		
 		StringBuilder strRequestPayload = new StringBuilder();
 		BufferedReader brStream =  new BufferedReader(new InputStreamReader(payload.getValue()));

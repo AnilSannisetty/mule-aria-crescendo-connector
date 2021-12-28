@@ -31,7 +31,7 @@ import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfigura
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.EntityRequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.connection.AriaConnection;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.CreateAcctBillingGrpParam;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.CreateAcctBillingGroupParam;
 import com.prodapt.mulesoft.connectors.aria.internal.utility.RestRequestBuilder;
 
 public class CreateAcctBillingGroup {
@@ -40,9 +40,9 @@ public class CreateAcctBillingGroup {
 
 	@DisplayName("Create Account Billing Group")
 	@MediaType(value = "application/json")
-	@Summary("This Operation is used to create a new billing group, optionally assign a new payment method to this billing group, and to optionally assign this new billing group to a plan instance.")
+	@Summary("This operation is used to create a new billing group, optionally assign a new payment method to this billing group, and to optionally assign this new billing group to a plan instance.")
 	public void createAccountBillingGroup(@Config RestConfiguration rc, @Connection AriaConnection ac,
-			@ParameterGroup(name = "Input Arguments") CreateAcctBillingGrpParam ar,
+			@ParameterGroup(name = "Input Arguments") CreateAcctBillingGroupParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,
 			@ParameterGroup(name = "Connector Overrides") ConfigurationOverrides overrides,
 			@Content(primary = true) TypedValue<InputStream> payload, StreamingHelper streamingHelper,
@@ -79,7 +79,7 @@ public class CreateAcctBillingGroup {
 			}
 		};
 	}
-private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, CreateAcctBillingGrpParam ar) {
+private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, CreateAcctBillingGroupParam ar) {
 		
 		StringBuilder strRequestPayload = new StringBuilder();
 		BufferedReader brStream =  new BufferedReader(new InputStreamReader(payload.getValue()));
