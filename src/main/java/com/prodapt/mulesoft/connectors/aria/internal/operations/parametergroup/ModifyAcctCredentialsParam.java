@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyAcctCredentialsParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to update credentials of an account")
+	@Summary("Aria API call to change password, secret question, secret answer, and/or personal identification number for a specified account.")
 	@Optional(defaultValue = "update_acct_credentials_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

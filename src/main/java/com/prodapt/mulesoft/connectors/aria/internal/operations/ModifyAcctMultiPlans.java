@@ -38,7 +38,7 @@ public class ModifyAcctMultiPlans {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctMultiPlans.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Multiple Plans")
+	@DisplayName("Update Multiple Plans")
 	@MediaType(value = "application/json")
 	@Summary("This operation assigns, replaces, updates, and/or cancels multiple plans for a specific account.")
 	public void modifyAcctMultiPlans(@Config RestConfiguration rc, @Connection AriaConnection ac,

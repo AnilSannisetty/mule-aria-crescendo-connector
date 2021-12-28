@@ -38,7 +38,7 @@ public class ModifyOrder {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyOrder.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Order")
+	@DisplayName("Update Order")
 	@MediaType(value = "application/json")
 	@Summary("This operation updates an order for one or more inventory items ordered by a specified account holder.")
 	public void modifyOrder(@Config RestConfiguration rc, @Connection AriaConnection ac,

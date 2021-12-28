@@ -11,7 +11,7 @@ public class GetAcctBalanceParam {
 
 		@Parameter
 		@DisplayName("API Name")
-		@Summary("Aria API call to get account balance")
+		@Summary("Aria API call to get account balance.")
 		@Optional(defaultValue = "get_acct_balance_m")
 		@Expression(ExpressionSupport.SUPPORTED)
 		private String rest_Call;

@@ -38,13 +38,13 @@ public class ModifyAcctPlanStatus {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctPlanStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Plan Status")
+	@DisplayName("Update Account Plan Status")
 	@MediaType(value = "application/json")
 	@Summary("This operation sets the status of a master or supplemental plan for a given account "
 			+ "and optionally indicates the number of days or date in the future on which the status change"
 			+ " should go into effect. This call can also reset the billing "
 			+ "dates on the status change date for master plans changing from a "
-			+ "non-billable to a billable status..")
+			+ "non-billable to a billable status.")
 	public void modifyAcctPlanStatus(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyAcctPlanStatusParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

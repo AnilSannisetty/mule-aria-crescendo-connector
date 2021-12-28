@@ -38,7 +38,7 @@ public class CreateOrderWithPlan {
 	private static final Logger logger = LoggerFactory.getLogger(CreateOrderWithPlan.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Create Order With Plan")
+	@DisplayName("Create Order With Plan")
 	@MediaType(value = "application/json")
 	@Summary("This operation allows creation of order and plan changes on a single invoice.")
 	public void createOrderWithPlan(@Config RestConfiguration rc, @Connection AriaConnection ac,

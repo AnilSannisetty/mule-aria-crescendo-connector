@@ -38,7 +38,7 @@ public class ModifyAcctStatus {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyAcctStatus.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Account Status")
+	@DisplayName("Update Account Status")
 	@MediaType(value = "application/json")
 	@Summary("This operation sets the status of a specified account and optionally indicates the number of days or date in the future on which the status change should go into effect.")
 	public void modifyAcctStatus(@Config RestConfiguration rc, @Connection AriaConnection ac,

@@ -38,9 +38,9 @@ public class ModifyContact {
 	private static final Logger logger = LoggerFactory.getLogger(ModifyContact.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Update Contact")
+	@DisplayName("Update Contact")
 	@MediaType(value = "application/json")
-	@Summary("This operation updates contact information for Aria accounts or Billing Groups.")
+	@Summary("This operation updates contact information for Aria accounts or billing groups.")
 	public void modifyContact(@Config RestConfiguration rc, @Connection AriaConnection ac,
 			@ParameterGroup(name = "Input Arguments") ModifyContactParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,

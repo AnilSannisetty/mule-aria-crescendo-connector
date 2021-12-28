@@ -31,18 +31,18 @@ import com.prodapt.mulesoft.connectors.aria.internal.configuration.RestConfigura
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.ConfigurationOverrides;
 import com.prodapt.mulesoft.connectors.aria.internal.configuration.parametergroup.EntityRequestParameters;
 import com.prodapt.mulesoft.connectors.aria.internal.connection.AriaConnection;
-import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.GetAllAcctDetailsParam;
+import com.prodapt.mulesoft.connectors.aria.internal.operations.parametergroup.GetAcctDetailsAllParam;
 import com.prodapt.mulesoft.connectors.aria.internal.utility.RestRequestBuilder;
 
-public class GetAllAccountDetails {
-	private static final Logger logger = LoggerFactory.getLogger(GetAllAccountDetails.class);
+public class GetAcctDetailsAll {
+	private static final Logger logger = LoggerFactory.getLogger(GetAcctDetailsAll.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("GET: Account Details All")
+	@DisplayName("Get Account Details All")
 	@MediaType(value = "application/json")
 	@Summary("This operation returns a detailed set of information about an account. In addition to contact, demographic, and basic billing configuration information, you can optionally retrieve plan information, billing group information, and payment method information.")
 	public void GetAcctDetails(@Config RestConfiguration rc, @Connection AriaConnection ac,
-			@ParameterGroup(name = "Input Arguments") GetAllAcctDetailsParam ar,
+			@ParameterGroup(name = "Input Arguments") GetAcctDetailsAllParam ar,
 			@ParameterGroup(name = "Request Parameters") EntityRequestParameters parameters,
 			@ParameterGroup(name = "Connector Overrides") ConfigurationOverrides overrides,
 			@Content(primary = true) TypedValue<InputStream> payload, StreamingHelper streamingHelper,
@@ -79,7 +79,7 @@ public class GetAllAccountDetails {
 			}
 		};
 	}
-private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, GetAllAcctDetailsParam ar) {
+private JSONObject attachStandardParamsToPayload(TypedValue<InputStream> payload, String apiName, AriaConnection ac, GetAcctDetailsAllParam ar) {
 		
 		StringBuilder strRequestPayload = new StringBuilder();
 		BufferedReader brStream =  new BufferedReader(new InputStreamReader(payload.getValue()));

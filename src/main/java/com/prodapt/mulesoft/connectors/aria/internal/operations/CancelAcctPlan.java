@@ -38,7 +38,7 @@ public class CancelAcctPlan {
 	private static final Logger logger = LoggerFactory.getLogger(CancelAcctPlan.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Cancel Account Plan")
+	@DisplayName("Cancel Account Plan")
 	@MediaType(value = "application/json")
 	@Summary("This operation cancels a master or supplemental plan assigned to a specified account. "
 			+ "Note that the cancellation of a master or supplemental plan also cancels all its child plans. "

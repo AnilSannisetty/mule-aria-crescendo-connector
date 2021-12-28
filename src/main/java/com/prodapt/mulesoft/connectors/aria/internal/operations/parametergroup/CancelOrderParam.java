@@ -11,7 +11,7 @@ public class CancelOrderParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel an account holder's order")
+	@Summary("Aria API call to cancel an account holder's order.")
 	@Optional(defaultValue = "cancel_order_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

@@ -7,11 +7,11 @@ import org.mule.runtime.extension.api.annotation.param.Parameter;
 import org.mule.runtime.extension.api.annotation.param.display.DisplayName;
 import org.mule.runtime.extension.api.annotation.param.display.Summary;
 
-public class CreateAcctBillingGrpParam {
+public class GetAcctDetailsAllParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to create account billing group")
-	@Optional(defaultValue = "create_acct_billing_group_m")
+	@Summary("Aria API call that returns a detailed set of information about an account.")
+	@Optional(defaultValue = "get_acct_details_all_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
 	
@@ -20,13 +20,7 @@ public class CreateAcctBillingGrpParam {
 	@Summary("Version of the API")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private int releaseVersion;
-	
-	
-	@Parameter
-	@DisplayName("Client Receipt Id")
-	@Summary("Client-defined unique identifier used to track related system actions")
-	private String client_receipt_id;
-	
+		
 	
 	public String getRest_Call() {
 		return rest_Call;
@@ -44,13 +38,19 @@ public class CreateAcctBillingGrpParam {
 		this.releaseVersion = releaseVersion;
 	}
 
-
-	public String getClient_receipt_id() {
-		return client_receipt_id;
-	}
-
-	public void setClient_receipt_id(String client_receipt_id) {
-		this.client_receipt_id = client_receipt_id;
-	}
-
+//	public boolean isDo_write() {
+//		return do_write;
+//	}
+//
+//	public void setDo_write(boolean do_write) {
+//		this.do_write = do_write;
+//	}
+//
+//	public String getClient_receipt_id() {
+//		return client_receipt_id;
+//	}
+//
+//	public void setClient_receipt_id(String client_receipt_id) {
+//		this.client_receipt_id = client_receipt_id;
+//	}
 }

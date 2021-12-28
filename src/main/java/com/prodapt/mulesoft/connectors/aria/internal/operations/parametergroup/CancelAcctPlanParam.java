@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class CancelAcctPlanParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to cancel a master or supplemental plan from a specified account")
+	@Summary("Aria API call to cancel a master or supplemental plan from a specified account.")
 	@Optional(defaultValue = "cancel_acct_plan_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

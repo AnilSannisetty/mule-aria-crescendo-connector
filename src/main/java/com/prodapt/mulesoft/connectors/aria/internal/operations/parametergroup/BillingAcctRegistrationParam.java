@@ -12,7 +12,7 @@ public class BillingAcctRegistrationParam {
 	
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to billing account registration")
+	@Summary("Aria API call to billing account registration.")
 	@Optional(defaultValue = "create_acct_complete_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;

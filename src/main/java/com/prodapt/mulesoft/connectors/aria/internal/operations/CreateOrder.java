@@ -38,7 +38,7 @@ public class CreateOrder {
 	private static final Logger logger = LoggerFactory.getLogger(GenInvoice.class);
 	public static final RestRequestBuilder.QueryParamFormat QUERY_PARAM_FORMAT = RestRequestBuilder.QueryParamFormat.MULTIMAP;
 
-	@DisplayName("CRUD: Create Order")
+	@DisplayName("Create Order")
 	@MediaType(value = "application/json")
 	@Summary("This operation creates an invoice for one or more inventory items ordered by a specified account holder. This call also has the ability to collect a payment for the invoice by specifying \"true\" (1) in the bill_immediately field.")
 	public void createOrder(@Config RestConfiguration rc, @Connection AriaConnection ac,

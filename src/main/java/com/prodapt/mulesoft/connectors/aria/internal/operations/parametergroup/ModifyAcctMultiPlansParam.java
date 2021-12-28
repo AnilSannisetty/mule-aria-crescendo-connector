@@ -10,7 +10,7 @@ import org.mule.runtime.extension.api.annotation.param.display.Summary;
 public class ModifyAcctMultiPlansParam {
 	@Parameter
 	@DisplayName("API Name")
-	@Summary("Aria API call to update multiple plans for a specific account.")
+	@Summary("Aria API call that assigns, replaces, updates, and/or cancels multiple plans (both master and supplemental plans) for a specified account.")
 	@Optional(defaultValue = "update_acct_plan_multi_m")
 	@Expression(ExpressionSupport.SUPPORTED)
 	private String rest_Call;
